@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
+
+app.get('/favicon.ico', (req, res) => res.status(204));
 app.use((req, res, next) => {
   const err = new Error('Not Found');
   console.log(err);
